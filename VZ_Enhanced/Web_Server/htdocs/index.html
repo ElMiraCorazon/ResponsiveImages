@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>VZ Enhanced</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="websocket.js" charset="UTF-8"></script>
+	</head>
+	<body onload="initialize_page();">
+		<div id="tabs" class="tab_row">
+			<div class="connect"><a class="popup_button" style="display: inline;" id="connection" onclick="connect(); return false;" href="" title="Connect to VZ Enhanced">Connect</a></div>
+			<div class="tab" onclick="switch_tab( this, 'call_log' ); return false;" title="Call Log">Call Log</div>
+			<div class="tab" onclick="switch_tab( this, 'contact_list' ); return false;" title="Contact List">Contact List</div>
+			<div class="tab" onclick="switch_tab( this, 'forward_list' ); return false;" title="Forward List">Forward List</div>
+			<div class="tab" onclick="switch_tab( this, 'ignore_list' ); return false;" title="Ignore List">Ignore List</div>
+			<div class="tab" onclick="switch_tab( this, 'forward_cid_list' ); return false;" title="Forward Caller ID Name List">Forward Caller ID Name List</div>
+			<div class="tab" onclick="switch_tab( this, 'ignore_cid_list' ); return false;" title="Ignore Caller ID Name List">Ignore Caller ID Name List</div>
+		</div>
+		<div class="data_row">
+			<div class="container">
+				<div id="call_log" class="l_table">
+					<div class="l_header">
+						<div class="l_heading">Caller ID Name</div>
+						<div class="l_heading">Phone Number</div>
+						<div class="l_heading">Date and Time</div>
+					</div>
+				</div>
+				<div id="contact_list" class="l_table" style="display: none;">
+					<div class="l_header">
+						<div class="l_heading">First Name</div>
+						<div class="l_heading">Last Name</div>
+						<div class="l_heading">Home Phone Number</div>
+						<div class="l_heading">Cell Phone Number</div>
+					</div>
+				</div>
+				<div id="forward_list" class="l_table" style="display: none;">
+					<div class="l_header">
+						<div class="l_heading">Phone Number</div>
+						<div class="l_heading">Forward To</div>
+						<div class="l_heading">Total Calls</div>
+					</div>
+				</div>
+				<div id="ignore_list" class="l_table" style="display: none;">
+					<div class="l_header">
+						<div class="l_heading">Phone Number</div>
+						<div class="l_heading">Total Calls</div>
+					</div>
+				</div>
+				<div id="forward_cid_list" class="l_table" style="display: none;">
+					<div class="l_header">
+						<div class="l_heading">Caller ID Name</div>
+						<div class="l_heading">Forward To</div>
+						<div class="l_heading">Match Case</div>
+						<div class="l_heading">Match Whole Word</div>
+						<div class="l_heading">Total Calls</div>
+					</div>
+				</div>
+				<div id="ignore_cid_list" class="l_table" style="display: none;">
+					<div class="l_header">
+						<div class="l_heading">Caller ID Name</div>
+						<div class="l_heading">Match Case</div>
+						<div class="l_heading">Match Whole Word</div>
+						<div class="l_heading">Total Calls</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
